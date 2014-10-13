@@ -19,24 +19,24 @@ public class Rover {
 
     public void receiveCommands(String commands) throws Exception {
         for (char command : commands.toCharArray()) {
-            receiveSingleCommand(command);
+            if (!receiveSingleCommand(command)) {
+                break;
+            }
         }
     }
 
-    public void receiveSingleCommand(char command) throws Exception {
+    public boolean receiveSingleCommand(char command) throws Exception {
         switch(Character.toUpperCase(command)) {
             case 'F':
-                getCoordinates().moveForward();
-                break;
+                return getCoordinates().moveForward();
             case 'B':
-                getCoordinates().moveBackward();
-                break;
+                return getCoordinates().moveBackward();
             case 'L':
                 getCoordinates().changeDirectionLeft();
-                break;
+                return true;
             case 'R':
                 getCoordinates().changeDirectionRight();
-                break;
+                return true;
             default:
                 throw new Exception("Command " + command + " is unknown.");
         }

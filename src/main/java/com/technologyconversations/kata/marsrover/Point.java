@@ -15,13 +15,13 @@ public class Point {
         setMaxLocation(maxLocationValue);
     }
 
-    public void forward() {
-        setLocation((getLocation() + 1) % (getMaxLocation() + 1));
+    public int getForwardLocation() {
+        return (getLocation() + 1) % (getMaxLocation() + 1);
     }
 
-    public void backward() {
-        if (getLocation() > 0) setLocation(getLocation() - 1);
-        else setLocation(getMaxLocation());
+    public int getBackwardLocation() {
+        if (getLocation() > 0) return getLocation() - 1;
+        else return getMaxLocation();
     }
 
 }

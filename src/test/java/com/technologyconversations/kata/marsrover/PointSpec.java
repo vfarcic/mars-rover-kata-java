@@ -28,31 +28,27 @@ public class PointSpec {
     }
 
     @Test
-    public void forwardShouldIncreasePointValueByOne() {
+    public void getForwardLocationShouldIncreasePointValueByOne() {
         int expected = point.getLocation() + 1;
-        point.forward();
-        assertThat(point.getLocation()).isEqualTo(expected);
+        assertThat(point.getForwardLocation()).isEqualTo(expected);
     }
 
     @Test
-    public void backwardShouldDecreasePointValueByOne() {
+    public void getBackwardLocationShouldDecreasePointValueByOne() {
         int expected = point.getLocation() - 1;
-        point.backward();
-        assertThat(point.getLocation()).isEqualTo(expected);
+        assertThat(point.getBackwardLocation()).isEqualTo(expected);
     }
 
     @Test
-    public void forwardShouldSetValueToZeroIfMaxLocationIsPassed() {
+    public void getForwardLocationShouldSetValueToZeroIfMaxLocationIsPassed() {
         point.setLocation(point.getMaxLocation());
-        point.forward();
-        assertThat(point.getLocation()).isZero();
+        assertThat(point.getForwardLocation()).isZero();
     }
 
     @Test
-    public void backwardShouldSetValueToMaxLocationIfZeroLocationIsPassed() {
+    public void getBackwardLocationShouldSetValueToMaxLocationIfZeroLocationIsPassed() {
         point.setLocation(0);
-        point.backward();
-        assertThat(point.getLocation()).isEqualTo(point.getMaxLocation());
+        assertThat(point.getBackwardLocation()).isEqualTo(point.getMaxLocation());
     }
 
 }
