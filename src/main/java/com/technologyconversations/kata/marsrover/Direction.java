@@ -14,6 +14,10 @@ public enum Direction {
         shortName = shortNameValue;
     }
 
+    public Direction getBackwardDirection() {
+        return values()[(this.getValue() + 2) % 4];
+    }
+
     public int getValue() {
         return value;
     }

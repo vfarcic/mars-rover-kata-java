@@ -13,17 +13,8 @@ public class Rover {
         return coordinates;
     }
 
-    private Direction direction;
-    public void setDirection(Direction value) {
-        direction = value;
-    }
-    public Direction getDirection() {
-        return direction;
-    }
-
-    public Rover(Coordinates coordinatesValue, Direction directionValue) {
+    public Rover(Coordinates coordinatesValue) {
         setCoordinates(coordinatesValue);
-        setDirection(directionValue);
     }
 
     public void receiveCommands(String commands) throws Exception {
@@ -33,25 +24,26 @@ public class Rover {
     }
 
     public void receiveSingleCommand(char command) throws Exception {
-        if (command == 'M') {
-            getCoordinates().move(getDirection());
-        } else if (command == 'L') {
-            changeDirection(-1);
-        } else if (command == 'R') {
-            changeDirection(1);
-        } else {
-            throw new Exception("Command " + command + " is unknown.");
+        switch(Character.toUpperCase(command)) {
+            case 'F':
+                getCoordinates().moveForward();
+                break;
+            case 'B':
+                getCoordinates().moveBackward();
+                break;
+            case 'L':
+                getCoordinates().changeDirectionLeft();
+                break;
+            case 'R':
+                getCoordinates().changeDirectionRight();
+                break;
+            default:
+                throw new Exception("Command " + command + " is unknown.");
         }
     }
 
     public String getPosition() {
-        return getCoordinates().toString() + " " + getDirection().getShortName();
-    }
-
-    private void changeDirection(int directionStep) {
-        int directions = Direction.values().length;
-        int index = (directions + getDirection().getValue() + directionStep) % directions;
-        setDirection(Direction.values()[index]);
+        return getCoordinates().toString();
     }
 
 }
