@@ -1,7 +1,7 @@
 Mars Rover Kata
 ===============
 
-This code is a part of the [TODO](TODO) article published on [Technology Conversations](http://technologyconversations.com/).
+This code is a part of the [Java Tutorial Through Katas: Mars Rover](http://technologyconversations.com/2014/10/17/java-tutorial-through-katas-mars-rover/) article published on [Technology Conversations](http://technologyconversations.com/) article.
 
 Description
 -----------
@@ -34,4 +34,4 @@ To run all tests:
 gradle test
 ```
 
-For more details please visit the [TODO](TODO) article.
+For more details please visit the [Java Tutorial Through Katas: Mars Rover](http://technologyconversations.com/2014/10/17/java-tutorial-through-katas-mars-rover/) article published on [Technology Conversations](http://technologyconversations.com/) article.
