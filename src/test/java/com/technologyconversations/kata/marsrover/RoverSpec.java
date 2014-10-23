@@ -5,9 +5,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /*
 Source: http://dallashackclub.com/rover
@@ -28,14 +27,12 @@ public class RoverSpec {
     private final Direction direction = Direction.NORTH;
     private Point x;
     private Point y;
-    private List<Obstacle> obstacles;
 
     @Before
     public void beforeRoverTest() {
         x = new Point(1, 9);
         y = new Point(2, 9);
-        obstacles = new ArrayList<Obstacle>();
-        roverCoordinates = new Coordinates(x, y, direction, obstacles);
+        roverCoordinates = new Coordinates(x, y, direction, new ArrayList<Obstacle>());
         rover = new Rover(roverCoordinates);
     }
 
