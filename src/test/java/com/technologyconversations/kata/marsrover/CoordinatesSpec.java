@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CoordinatesSpec {
 
@@ -77,7 +77,7 @@ public class CoordinatesSpec {
         int expected = x.getLocation();
         coordinates.setDirection(Direction.EAST);
         coordinates.setObstacles(Arrays.asList(new Obstacle(x.getLocation() + 1, y.getLocation())));
-        coordinates.move(coordinates.getDirection());
+        coordinates.moveForward();
         assertThat(coordinates.getX().getLocation()).isEqualTo(expected);
     }
 

@@ -2,7 +2,8 @@ package com.technologyconversations.kata.marsrover;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.*;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /*
 Point is a two-dimensional point on the grid.
